@@ -1,0 +1,14 @@
+SET SERVEROUTPUT ON;
+DECLARE
+	TYPE t_NumberTableType IS TABLE OF NUMBER	
+		INDEX BY BINARY_INTEGER;
+	
+	v_NumberTable t_NumberTableType;
+	v_TempVar NUMBER;	
+BEGIN
+	v_TempVar := v_NumberTable(1);
+EXCEPTION	
+	WHEN NO_DATA_FOUND THEN
+		DBMS_OUTPUT.PUT_LINE('Exceção NO_DATA_FOUND levantada');
+END;
+/
